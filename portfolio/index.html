@@ -1208,20 +1208,24 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .constraints { padding: 96px 24px 128px; }
   .constraints-header { margin-bottom: 64px; }
   .constraint-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 12px;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 14px;
   }
   .constraint-grid:has(.constraint-card:hover) {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
   }
   .constraint-card {
     padding: 28px 24px;
+    min-height: 280px;
+  }
+  .card-lead {
+    font-size: 19px !important;
   }
   /* 移动端无 hover,detail 永远展开,brief 隐藏 */
   .card-brief {
@@ -2442,6 +2446,116 @@ body {
   .fade-up { opacity: 1 !important; transform: none !important; }
   .arch-svg .arch-node { opacity: 1 !important; }
   .arch-svg text { opacity: 1 !important; }
+}
+/* ==================================================== */
+/* 全局移动端 catch-all · 系统性修复手机端体验             */
+/* ==================================================== */
+@media (max-width: 768px) {
+  /* 整体 padding 收紧 */
+  .section,
+  .hero,
+  .results,
+  .context,
+  .constraints,
+  .architecture,
+  .decisions,
+  .production,
+  .changelog,
+  .lessons,
+  .reflections,
+  footer {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* 所有 grid 一律单列(除了 results 4 数据卡保持 2x2) */
+  .context-blocks,
+  .decision-grid,
+  .production-grid,
+  .lesson-grid,
+  .reflection-list,
+  .showcase-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Results 数字卡 2x2 */
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  /* 字号统一往下调 */
+  h1, .hero-title { font-size: clamp(36px, 9vw, 56px) !important; line-height: 1.15 !important; }
+  h2, .section-title { font-size: clamp(24px, 6vw, 32px) !important; line-height: 1.25 !important; }
+  h3 { font-size: clamp(17px, 4.5vw, 20px) !important; }
+
+  /* Hero 区收紧 */
+  .hero-content { padding: 80px 0 60px !important; }
+  .hero-cta-group { flex-direction: column; gap: 12px; align-items: stretch !important; }
+  .hero-cta-primary, .hero-cta-secondary { width: 100% !important; justify-content: center; }
+
+  /* SVG 架构图横向滚动避免溢出 */
+  .arch-canvas {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+  .arch-svg { min-width: 720px; }
+
+  /* 双图卡 lesson 改成单列 */
+  .lesson-card--dual { grid-template-columns: 1fr !important; }
+  .lesson-card--dual .lesson-img-pair { grid-template-rows: auto auto !important; }
+
+  /* 测试言卡片紧凑 */
+  .testimonial-card { padding: 40px 24px 36px !important; }
+  .testimonial-text--short { font-size: 17px !important; }
+  .testimonial-text--full { font-size: 15px !important; }
+  .testimonial-mark { font-size: 56px !important; left: 20px !important; top: 12px !important; }
+
+  /* 改 nav 在手机上不那么占空间 */
+  .nav-links { display: none !important; }
+
+  /* 卡片 padding 收紧 */
+  .result-card,
+  .context-block,
+  .decision-card,
+  .production-card,
+  .reflection-item,
+  .showcase-card,
+  .lesson-card {
+    padding: 24px 20px !important;
+  }
+
+  /* 图片显示完整 */
+  .production-img,
+  .lesson-img,
+  .showcase-img {
+    aspect-ratio: auto !important;
+    min-height: 200px;
+  }
+  .production-img img,
+  .lesson-img img,
+  .showcase-img img {
+    max-height: 60vh;
+  }
+
+  /* timeline 收紧 */
+  .timeline-item { padding-left: 36px !important; }
+
+  /* 减少超大间距 */
+  .section { padding-top: 80px !important; padding-bottom: 80px !important; }
+}
+
+/* 超小屏(≤480px)进一步紧凑 */
+@media (max-width: 480px) {
+  .section, .hero, footer {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .results-grid { grid-template-columns: 1fr !important; }
+  .stat-num { font-size: 44px !important; }
+  h1, .hero-title { font-size: clamp(32px, 11vw, 48px) !important; }
 }
 </style>
 
