@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>刘沛呈 · 小德 · 雅德士风电公众号内容工作流</title>
+<title>刘沛呈 · 小德 · OpenClaw 中控台与雅德士内容工作流</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Noto+Serif+SC:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -1483,7 +1483,100 @@ body {
 .testimonial-card.is-expanded .testimonial-toggle .toggle-label-full { display: inline; }
 
 /* ==================================================== */
-/* SECTION 03 · CONTEXT                                 */
+/* SECTION 03 · CONSOLE                                 */
+/* ==================================================== */
+
+.console-case {
+  padding: 160px 8vw 176px;
+  background: var(--color-bg-deep);
+  position: relative;
+}
+
+.console-case::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(74,90,106,0.12), transparent);
+}
+
+.console-case-grid {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 72px;
+  align-items: center;
+}
+
+.console-case-copy {
+  max-width: 620px;
+}
+
+.console-case-copy p {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--color-ink-soft);
+  margin: 22px 0 0;
+}
+
+.console-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.console-feature {
+  min-height: 112px;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(74,90,106,0.10);
+  border-radius: 8px;
+  background: rgba(254,253,251,0.68);
+}
+
+.console-feature strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: 7px;
+}
+
+.console-feature span {
+  display: block;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+}
+
+.console-shot-frame {
+  padding: 12px;
+  border: 1px solid rgba(74,90,106,0.10);
+  border-radius: 10px;
+  background: var(--color-paper);
+  box-shadow: 0 24px 60px rgba(26,31,36,0.10);
+}
+
+.console-shot-frame img {
+  display: block;
+  width: 100%;
+  border-radius: 7px;
+}
+
+@media (max-width: 1000px) {
+  .console-case-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .console-case { padding: 96px 24px 112px; }
+  .console-feature-grid { grid-template-columns: 1fr; }
+}
+
+/* ==================================================== */
+/* SECTION 04 · CONTEXT                                 */
 /* ==================================================== */
 
 .context-grid {
@@ -2694,6 +2787,7 @@ body {
     </div>
     <ul class="nav-links">
       <li><a href="#results">结果</a></li>
+      <li><a href="#console">中控台</a></li>
       <li><a href="#context">背景</a></li>
       <li><a href="#constraints">约束</a></li>
       <li><a href="#architecture">架构</a></li>
@@ -2705,18 +2799,18 @@ body {
   <!-- 前景内容 -->
   <div class="hero-content">
     <div class="hero-eyebrow">
-      <span class="hero-eyebrow-line"></span>小德 v2.4 · YARDCE · 2026<span class="hero-eyebrow-pulse"></span>
+      <span class="hero-eyebrow-line"></span>小德中控台 · OpenClaw · YARDCE · 2026<span class="hero-eyebrow-pulse"></span>
     </div>
 
     <h1 class="hero-title">
       <span class="hero-title-line"><span class="hero-title-inner">为雅德士搭的</span></span>
-      <span class="hero-title-line"><span class="hero-title-inner">风电<span class="hero-title-em">公众号工作流</span></span></span>
+      <span class="hero-title-line"><span class="hero-title-inner">小德<span class="hero-title-em">工作流中控台</span></span></span>
     </h1>
 
     <p class="hero-subtitle">
-      我是<strong>刘沛呈</strong>。雅德士在国内风电叶片检测领域算技术领先的一家,日常要发公众号——
-      我用 OpenClaw 接入 DeepSeek 搭了套多 Agent 系统,把老板每天近一天的人工整理,
-      压到 30 分钟选题与审核。
+      我是<strong>刘沛呈</strong>。我先用 OpenClaw + DeepSeek 为雅德士搭了多 Agent 内容工作流,
+      再把它升级成能审批、查库、看队列、诊断 OpenClaw、追踪发布产物的“小德中控台”。
+      这不是停在 demo 的自动化,而是一套真实业务每天可以操作和维护的系统。
     </p>
 
     <div class="hero-cta-group">
@@ -2768,9 +2862,9 @@ body {
         <div class="result-desc">原本占用近一个工作日,现仅需选题确认</div>
       </div>
       <div class="result-card fade-up">
-        <div class="result-num"><span class="num-value-static">0</span></div>
-        <div class="result-label">编造数据 / URL</div>
-        <div class="result-desc">所有引用强制可验证,系统层强制反查</div>
+        <div class="result-num" data-count-to="7"><span class="num-value">0</span></div>
+        <div class="result-label">中控台核心模块</div>
+        <div class="result-desc">总览、内容库、工作流、对话、运维、发布、日志</div>
       </div>
       <div class="result-card fade-up">
         <div class="result-num" data-count-to="23"><span class="num-value">0</span><em>+</em></div>
@@ -2809,7 +2903,44 @@ body {
 
 
 <!-- ==================================================== -->
-<!-- SECTION 03 · CONTEXT                                -->
+<!-- SECTION 03 · CONSOLE                                -->
+<!-- ==================================================== -->
+<section class="console-case" id="console">
+  <div class="console-case-grid">
+    <div class="console-case-copy fade-up">
+      <div class="section-eyebrow">
+        <span class="section-eyebrow-line"></span>
+        <span class="section-eyebrow-num">03</span>
+        OPENCLAW CONSOLE
+      </div>
+      <h2 class="section-title">
+        后来我把“小德”升级成<em>可运营的中控台</em>
+      </h2>
+      <p>
+        第一阶段解决的是“能不能自动生成一篇公众号文章”。真正上线后,问题变成了另一组更像产品和运维的问题:
+        今天跑到哪一步了?候选在哪里选?哪篇论文可以进 Mode B?OpenClaw 网关是不是活着?飞书通道有没有断?
+        失败任务怎么重试,产物保存在哪里,数据库字段缺失怎么修?
+      </p>
+      <p>
+        所以我做了一个本地 React + Express 中控台,把内容生产链路从“命令行 + 飞书消息”收束成一个老板和管理员都能用的后台。
+        它让小德从一个会写稿的 agent,变成一套能被人监督、审批、排障和持续运行的业务系统。
+      </p>
+      <div class="console-feature-grid">
+        <div class="console-feature"><strong>Mode A/B 工作流控制</strong><span>启动日报、批准论文速览、查看候选列表、提交选题并追踪写稿阶段。</span></div>
+        <div class="console-feature"><strong>内容数据库治理</strong><span>已发库、备选池、论文池统一检索,支持查重、字段修复、SQLite/JSON 同步。</span></div>
+        <div class="console-feature"><strong>OpenClaw 运维面板</strong><span>检查 Gateway、RPC、飞书进程、任务状态和网络访问入口,必要时触发重启。</span></div>
+        <div class="console-feature"><strong>失败任务自修复</strong><span>识别假运行、日期错乱、HTML 产物缺失和发布失败,把修复入口留在任务表内。</span></div>
+      </div>
+    </div>
+    <div class="console-shot-frame fade-up">
+      <img src="/assets/xiaode-console-dashboard.png" alt="小德中控台真实界面截图">
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================================================== -->
+<!-- SECTION 04 · CONTEXT                                -->
 <!-- ==================================================== -->
 <section class="section section--deep" id="context">
   <div class="section-inner">
@@ -2817,7 +2948,7 @@ body {
     <header class="section-header fade-up">
       <div class="section-eyebrow">
         <span class="section-eyebrow-line"></span>
-        <span class="section-eyebrow-num">03</span>
+        <span class="section-eyebrow-num">05</span>
         CONTEXT
       </div>
       <h2 class="section-title">
@@ -3028,7 +3159,7 @@ body {
     <header class="section-header fade-up">
       <div class="section-eyebrow">
         <span class="section-eyebrow-line"></span>
-        <span class="section-eyebrow-num">05</span>
+        <span class="section-eyebrow-num">06</span>
         ARCHITECTURE
       </div>
       <h2 class="section-title">
@@ -3266,7 +3397,7 @@ body {
     <header class="section-header fade-up">
       <div class="section-eyebrow">
         <span class="section-eyebrow-line"></span>
-        <span class="section-eyebrow-num">06</span>
+        <span class="section-eyebrow-num">07</span>
         TECH DECISIONS
       </div>
       <h2 class="section-title">
@@ -3328,7 +3459,7 @@ body {
     <header class="section-header fade-up">
       <div class="section-eyebrow">
         <span class="section-eyebrow-line"></span>
-        <span class="section-eyebrow-num">07</span>
+        <span class="section-eyebrow-num">08</span>
         IN PRODUCTION
       </div>
       <h2 class="section-title">
@@ -3464,7 +3595,7 @@ body {
     <header class="section-header fade-up">
       <div class="section-eyebrow">
         <span class="section-eyebrow-line"></span>
-        <span class="section-eyebrow-num">08</span>
+        <span class="section-eyebrow-num">09</span>
         CHANGELOG
       </div>
       <h2 class="section-title">
@@ -3533,7 +3664,7 @@ body {
     <header class="section-header fade-up">
       <div class="section-eyebrow">
         <span class="section-eyebrow-line"></span>
-        <span class="section-eyebrow-num">09</span>
+        <span class="section-eyebrow-num">10</span>
         LESSONS IN FAILURE
       </div>
       <h2 class="section-title">
@@ -3625,7 +3756,7 @@ body {
     <header class="section-header fade-up">
       <div class="section-eyebrow">
         <span class="section-eyebrow-line"></span>
-        <span class="section-eyebrow-num">10</span>
+        <span class="section-eyebrow-num">11</span>
         REFLECTIONS
       </div>
       <h2 class="section-title">
@@ -3779,6 +3910,7 @@ body {
     }
 
     staggerFade('.result-card.fade-up', 0.1);
+    staggerFade('.console-feature.fade-up', 0.06);
     staggerFade('.context-block.fade-up', 0.08);
     staggerFade('.constraint-card.fade-up', 0.06);
     staggerFade('.decision-card.fade-up', 0.08);
@@ -3789,7 +3921,7 @@ body {
     staggerFade('.reflection-item.fade-up', 0.08);
 
     // 单独处理 testimonial 和 arch-canvas (大区块,不交错)
-    gsap.utils.toArray('.testimonial-card.fade-up, .arch-canvas.fade-up').forEach(function(el) {
+    gsap.utils.toArray('.testimonial-card.fade-up, .arch-canvas.fade-up, .console-case-copy.fade-up, .console-shot-frame.fade-up').forEach(function(el) {
       gsap.to(el, {
         opacity: 1,
         y: 0,

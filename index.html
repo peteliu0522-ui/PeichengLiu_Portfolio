@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>刘沛呈 · Peter Liu — AI Agent / LLM 应用工程师</title>
-<meta name="description" content="刘沛呈(Peter Liu)· 2025 应届生 · AI Agent / LLM 应用工程师 · 雅德士「小德」AI 工作流项目落地者" />
+<meta name="description" content="刘沛呈(Peter Liu)· 2025 应届生 · AI Agent / LLM 应用工程师 · 雅德士「小德」工作流与 OpenClaw 中控台落地者" />
 
 <style>
 /* ==================================================== */
@@ -333,6 +333,83 @@ button { font: inherit; cursor: pointer; border: none; background: transparent; 
 /* ==================================================== */
 /* SECTION 03 · EXPERIENCE                              */
 /* ==================================================== */
+.console {
+  padding: 120px 32px;
+  background: var(--color-bg-deep);
+}
+.console-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 48px;
+  align-items: center;
+}
+.console-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-sage-deep);
+  margin-bottom: 18px;
+}
+.console-title {
+  font-weight: 300;
+  font-size: clamp(28px, 3.5vw, 44px);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 22px;
+}
+.console-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-sage-deep);
+}
+.console-copy {
+  color: var(--color-ink-soft);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.console-modules {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.console-module {
+  padding: 14px 16px;
+  border: 1px solid rgba(74, 90, 106, 0.1);
+  border-radius: 8px;
+  background: rgba(254, 253, 251, 0.6);
+}
+.console-module strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.console-module span {
+  display: block;
+  color: var(--color-ink-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.console-shot {
+  padding: 10px;
+  border: 1px solid rgba(74, 90, 106, 0.1);
+  border-radius: 8px;
+  background: var(--color-paper);
+  box-shadow: 0 18px 44px rgba(26, 31, 36, 0.08);
+}
+.console-shot img {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+}
+@media (max-width: 900px) {
+  .console-inner { grid-template-columns: 1fr; }
+  .console-modules { grid-template-columns: 1fr; }
+}
+
 .exp {
   padding: 120px 32px;
   background: var(--color-bg);
@@ -815,6 +892,7 @@ button { font: inherit; cursor: pointer; border: none; background: transparent; 
   <div class="nav-brand">pete<span>6</span>pc.com</div>
   <div class="nav-links">
     <a href="#experience" class="nav-link">经历</a>
+    <a href="#console" class="nav-link">中控台</a>
     <a href="#facts" class="nav-link">背景</a>
     <a href="#contact" class="nav-link">联系</a>
     <a href="/portfolio" class="nav-cta">作品集 →</a>
@@ -828,20 +906,20 @@ button { font: inherit; cursor: pointer; border: none; background: transparent; 
   <div class="hero-inner">
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-line"></span>
-      <span>2025 应届生 · AI Application Engineer</span>
+      <span>2025 应届生 · AI Application / Agent Ops</span>
     </div>
 
     <h1 class="hero-name"><strong>刘沛呈</strong></h1>
     <div class="hero-name-en">Peicheng (Peter) Liu</div>
 
     <p class="hero-tagline">
-      把 AI 工作流从 demo,做到<em>真在跑</em>的生产系统。
+      把 AI 工作流从 demo,做到<em>有人用、能运维</em>的生产系统。
     </p>
 
     <p class="hero-pitch">
-      2025 年 12 月起在北京雅德士实习,独立设计并交付了一套 AI 内容工作流<strong>「小德」</strong>。
-      系统已稳定运行数月,把老板原本一整天的人工工作压缩到 30 分钟,
-      累计产出 23+ 篇真实公众号文章,带来公司近年首次央企主动询盘。
+      2025 年 12 月起在北京雅德士实习,独立设计并交付 AI 内容工作流<strong>「小德」</strong>,
+      最近继续把它升级为 OpenClaw 中控台:内容库、任务队列、Mode A/B 审批、飞书交互、发布中心和运维日志统一管理。
+      这套系统已把老板近 8 小时人工工作压缩到 30 分钟,并产出真实业务询盘。
     </p>
 
     <div class="hero-cta-group">
@@ -881,8 +959,33 @@ button { font: inherit; cursor: pointer; border: none; background: transparent; 
       <div class="stat-label">央企主动询盘 · 公司近年首次</div>
     </div>
     <div class="stat-card fade-in">
-      <div class="stat-num">0</div>
-      <div class="stat-label">编造红线 · 每条引用均可反查</div>
+      <div class="stat-num">7</div>
+      <div class="stat-label">中控台核心模块 · 总览/内容库/工作流/对话/运维/发布/日志</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================== -->
+<!-- SECTION 03 · CONSOLE                                 -->
+<!-- ==================================================== -->
+<section class="console" id="console">
+  <div class="console-inner fade-in">
+    <div>
+      <div class="console-eyebrow">OPENCLAW CONSOLE</div>
+      <h2 class="console-title">把「小德」做成可以交给老板使用的<em>中控台</em></h2>
+      <p class="console-copy">
+        早期小德解决的是“自动生成公众号内容”。这次迭代解决的是“系统怎么长期跑、谁来审批、失败怎么发现、产物在哪里、数据库怎么维护”。
+        我基于 React + Express 做了本地控制台,把 OpenClaw 任务、飞书入口、内容数据库、桌面产物和诊断日志收进同一个操作界面。
+      </p>
+      <div class="console-modules">
+        <div class="console-module"><strong>工作流控制</strong><span>启动 Mode A 日报、批准 Mode B 论文速览、追踪候选与写稿阶段。</span></div>
+        <div class="console-module"><strong>内容数据库</strong><span>管理已发库、备选池、论文池,支持查重、字段修复和 JSON/SQLite 同步。</span></div>
+        <div class="console-module"><strong>小德运维</strong><span>检查 Gateway、RPC、飞书通道、OpenClaw 任务和网络入口,支持重启与自诊断。</span></div>
+        <div class="console-module"><strong>发布中心</strong><span>查看 HTML 产物、桌面文件、失败任务和修复入口,让交付结果可追踪。</span></div>
+      </div>
+    </div>
+    <div class="console-shot">
+      <img src="/assets/xiaode-console-dashboard.png" alt="小德中控台真实界面截图">
     </div>
   </div>
 </section>
@@ -903,16 +1006,17 @@ button { font: inherit; cursor: pointer; border: none; background: transparent; 
     <div class="exp-card-header">
       <div>
         <span class="exp-card-company">北京雅德士工程技术咨询服务有限公司</span>
-        <span class="exp-card-role">实习生 · AI 工作流方向</span>
+        <span class="exp-card-role">实习生 · AI 工作流 / Agent Ops 方向</span>
       </div>
       <div class="exp-card-period">2025.12 — 至今</div>
     </div>
     <p class="exp-card-context">国内风电叶片检测领域技术领先企业 · 项目代号「小德」</p>
     <ul class="exp-list">
-      <li>独立搭建公司公众号的 AI 内容生产系统:每天自动从国际权威媒体搜索风电资讯、筛选评分、改写排版,推送到公众号草稿箱</li>
-      <li>通过飞书机器人与老板交互:老板在群里 @ 小德触发,小德返回筛选后的选题卡片,老板挑选后系统自动完稿并推送</li>
-      <li>从需求拆解、技术选型、系统搭建到迭代优化全程一人负责,跟老板每周对齐效果,持续打磨到稳定可用</li>
-      <li>v1.0 → v2.4 共 6 次迭代,每次都对应一个真实业务问题,最终带来公司首次央企询盘</li>
+      <li>独立搭建公司公众号 AI 内容生产系统:自动搜索风电资讯、筛选评分、改写排版、入库并生成微信公众号兼容 HTML</li>
+      <li>设计飞书 + OpenClaw 协作链路:老板 @ 小德触发任务,系统返回候选卡片,老板选题后 writer 自动完稿并保存桌面产物</li>
+      <li>继续开发「小德中控台」:把内容库、Mode A/B 审批、任务队列、OpenClaw 健康检查、发布中心和日志诊断做成可视化后台</li>
+      <li>处理真实生产问题:8K 输出截断、IP 白名单、日期错乱、假运行任务、字段缺失、重复入库和失败任务自修复</li>
+      <li>v1.0 → v2.4 共 6 次迭代,把近 8 小时人工压缩到 30 分钟,累计产出 23+ 篇真实文章并带来央企主动询盘</li>
     </ul>
   </article>
 
@@ -937,7 +1041,7 @@ button { font: inherit; cursor: pointer; border: none; background: transparent; 
       <h3 class="facts-col-title">Tech Stack</h3>
       <div class="skill-group">
         <div class="skill-group-label">Agent 框架</div>
-        <div class="skill-chips">OpenClaw · Claude Code · Cursor</div>
+        <div class="skill-chips">OpenClaw · Agent Ops · Claude Code · Cursor</div>
       </div>
       <div class="skill-group">
         <div class="skill-group-label">大模型 / API</div>
@@ -945,11 +1049,11 @@ button { font: inherit; cursor: pointer; border: none; background: transparent; 
       </div>
       <div class="skill-group">
         <div class="skill-group-label">开发</div>
-        <div class="skill-chips">Python · HTML / CSS / JS · REST API · JSON · Git</div>
+        <div class="skill-chips">React · TypeScript · Express · Python · HTML / CSS / JS · REST API · JSON · Git</div>
       </div>
       <div class="skill-group">
         <div class="skill-group-label">集成平台</div>
-        <div class="skill-chips">飞书 Bot · 微信公众号 · Tavily Search</div>
+        <div class="skill-chips">飞书 Bot · 微信公众号 · SQLite/FTS · Tavily Search · Vercel</div>
       </div>
     </div>
 
