@@ -918,7 +918,7 @@ button { font: inherit; cursor: pointer; border: none; background: transparent; 
 
     <p class="hero-pitch">
       2025 年 12 月起在北京雅德士实习,独立设计并交付 AI 内容工作流<strong>「小德」</strong>,
-      最近继续把它升级为 OpenClaw 中控台:内容库、任务队列、Mode A/B 审批、飞书交互、发布中心和运维日志统一管理。
+      最近继续把它升级为 OpenClaw 中控台:内容库、任务队列、Mode A/B 审批、发布中心和运维日志统一管理,99% 操作都在中控台完成。
       这套系统已把老板近 8 小时人工工作压缩到 30 分钟,并产出真实业务询盘。
     </p>
 
@@ -975,12 +975,12 @@ button { font: inherit; cursor: pointer; border: none; background: transparent; 
       <h2 class="console-title">把「小德」做成可以交给老板使用的<em>中控台</em></h2>
       <p class="console-copy">
         早期小德解决的是“自动生成公众号内容”。这次迭代解决的是“系统怎么长期跑、谁来审批、失败怎么发现、产物在哪里、数据库怎么维护”。
-        我基于 React + Express 做了本地控制台,把 OpenClaw 任务、飞书入口、内容数据库、桌面产物和诊断日志收进同一个操作界面。
+        我基于 React + Express 做了本地控制台,把 OpenClaw 任务、审批入口、内容数据库、桌面产物、备用通知和诊断日志收进同一个操作界面。
       </p>
       <div class="console-modules">
         <div class="console-module"><strong>工作流控制</strong><span>启动 Mode A 日报、批准 Mode B 论文速览、追踪候选与写稿阶段。</span></div>
         <div class="console-module"><strong>内容数据库</strong><span>管理已发库、备选池、论文池,支持查重、字段修复和 JSON/SQLite 同步。</span></div>
-        <div class="console-module"><strong>小德运维</strong><span>检查 Gateway、RPC、飞书通道、OpenClaw 任务和网络入口,支持重启与自诊断。</span></div>
+        <div class="console-module"><strong>小德运维</strong><span>检查 Gateway、RPC、通知通道、OpenClaw 任务和网络入口,支持重启与自诊断。</span></div>
         <div class="console-module"><strong>发布中心</strong><span>查看 HTML 产物、桌面文件、失败任务和修复入口,让交付结果可追踪。</span></div>
       </div>
     </div>
@@ -1013,7 +1013,7 @@ button { font: inherit; cursor: pointer; border: none; background: transparent; 
     <p class="exp-card-context">国内风电叶片检测领域技术领先企业 · 项目代号「小德」</p>
     <ul class="exp-list">
       <li>独立搭建公司公众号 AI 内容生产系统:自动搜索风电资讯、筛选评分、改写排版、入库并生成微信公众号兼容 HTML</li>
-      <li>设计飞书 + OpenClaw 协作链路:老板 @ 小德触发任务,系统返回候选卡片,老板选题后 writer 自动完稿并保存桌面产物</li>
+      <li>设计中控台 + OpenClaw 协作链路:老板在网页端启动 Mode A/B、查看候选、提交选题,writer 自动完稿并保存桌面产物;飞书仅保留备用选题与完成通知</li>
       <li>继续开发「小德中控台」:把内容库、Mode A/B 审批、任务队列、OpenClaw 健康检查、发布中心和日志诊断做成可视化后台</li>
       <li>处理真实生产问题:8K 输出截断、IP 白名单、日期错乱、假运行任务、字段缺失、重复入库和失败任务自修复</li>
       <li>v1.0 → v2.4 共 6 次迭代,把近 8 小时人工压缩到 30 分钟,累计产出 23+ 篇真实文章并带来央企主动询盘</li>
@@ -1053,7 +1053,7 @@ button { font: inherit; cursor: pointer; border: none; background: transparent; 
       </div>
       <div class="skill-group">
         <div class="skill-group-label">集成平台</div>
-        <div class="skill-chips">飞书 Bot · 微信公众号 · SQLite/FTS · Tavily Search · Vercel</div>
+        <div class="skill-chips">备用飞书通知 · 微信公众号 · SQLite/FTS · Tavily Search · Vercel</div>
       </div>
     </div>
 
